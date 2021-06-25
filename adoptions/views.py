@@ -18,9 +18,4 @@ def pet_detail(request, pet_id):
     except Pet.DoesNotExist:
         raise Http404("No pet found with that ID")
 
-
-    context = {
-        "pet": pet
-    }
-
-    return render(request, "", context)
+    return render(request, "adoptions/pet_detail.html", {"pet": pet})
